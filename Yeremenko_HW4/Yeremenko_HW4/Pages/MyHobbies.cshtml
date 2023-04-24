@@ -1,0 +1,28 @@
+﻿@page
+@model Yeremenko_HW4.Pages.MyHobbiesModel
+
+@foreach (var hobby in Model.hobbiesList)
+{
+     <table width="100%" cellspacing="0" cellpadding="5">
+       <tr> 
+        <td width="300" valign="top">
+            <div>
+                <img src=@hobby.Image width="150" height="150"/>
+            </div>
+        </td>
+        <td valign="top">
+            <div>
+                <a asp-page="/MyHobbies" asp-route-id="@hobby.Id" title="Hobby @hobby.Name">
+                    <div>
+                        <h3>@hobby.Name</h3> 
+                    </div>
+                </a>
+                    <div>
+                        <p>@hobby.Description</p>
+                    </div>
+            </div>
+        </td>
+       </tr>
+       <tr></tr>
+     </table>
+}
